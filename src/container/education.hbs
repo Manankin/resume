@@ -1,0 +1,26 @@
+{{#with main}}
+<main>
+    {{>title data=title big=true}}
+    <section>
+        <ul>
+            {{#each educations}}
+            <li>
+                {{name}}
+                {{#unless isEnd}} - studying in process {{/unless}}
+            </li>
+            {{/each}}
+        </ul>
+    </section>
+
+    {{>title data=certificate big=false}}
+    <section>
+        <ul>
+            {{#each certificates}}
+                <li>
+                    {{name}} ({{id}})
+                </li>
+            {{/each}}
+        </ul>
+    </section>
+</main>
+{{/with}}

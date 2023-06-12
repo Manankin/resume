@@ -14,51 +14,29 @@
 </head>
 
 <body>
-   {{#with header}}
-      <header class='header-block'>
-         <div>
-            <h1>{{name.firstname}}
-               {{name.lastname}}</h1>
-         </div>
-         <div>
-            <b>{{position}} </b>
-         </div>
-         <br />
-         <div>
-            <em>
-               {{salary}}
-            </em>
-         </div>
-         <br />
-         <address>
-            <em>
-               {{address}}
-            </em>
-         </address>
-
-         <br />
-         <hr />
-      </header>
-   {{/with}}
    <section>
-      {{> nav}}
+      {{>nav }}
    </section>
+
+      <br />
+      <hr />
 
       {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   }}
    {{{body}}}
 
-   {{> footer social=footer.social adres=header.address firstname=header.name.firstname lastname=header.name.lastname}}
+      <br />
+      <hr />
 
-   {{!-- Це старий варіант для footer
-   {{#with footer}}
+   {{> footer social=footer.social adres=header.address firstname=header.name.firstname lastname=header.name.lastname}}
+   
+   {{!--  це старий варіант для footer
+      {{#with footer}}
       <footer class='footer-block'>
       <div>
-         <hr />
-         <br />
          {{#with social}}
             {{> footerlink text=email.text href=email.href }}
             {{> footerlink text=phone.text href=phone.href }}
-            {{> footerlink text=linkedin.text href=linkedin.href blank=true noLine='false' }}   
+            {{> footerlink text=linkedin.text href=linkedin.href blank=true noLine='false'}}   
          {{/with}}
       </div>
       <div>
