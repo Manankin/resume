@@ -277,7 +277,7 @@ router.get('/person', function (req, res) {
    //             ↙ cюди вводимо назву файлу з сontainer
    res.render('person', {
       person: {
-         name: 'Emma Johnson',
+         name: 'Elsa Johnson',
          age: 32,
          gender: 'Female',
          address: {
