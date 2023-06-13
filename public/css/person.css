@@ -1,9 +1,12 @@
 body {
-   margin: 0px;
+   margin: 5px;
    padding: 0px;
+   border: 1px solid darkred;
+   padding: 5px;
 }
 
 div {
    border: 1px blue dashed;
-   margin: 5px;
+   margin: 5px 0px;
+   padding: 0px 5px;
 }
