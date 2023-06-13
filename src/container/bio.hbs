@@ -1,0 +1,125 @@
+{{! Блок про Альберта Ейнштейна }}
+<main>
+   {{! основні дані про Альберта }}
+   <div>
+      <h1> {{name}} </h1>
+      <dl>
+         <dt> Was burned {{birthdate}}</dt>
+         <dd> {{birthplace}} </dd>
+         <dt> Died {{deathdate}}</dt>
+         <dd> {{deathplace}} </dd>
+      </dl>
+      <p>famous as <strong> {{occupation}} </strong></p>
+      <p>was citizen of {{nationality}} </p>
+      relashionship with:
+      {{#each partners}}
+         <ul>
+            <li>
+               <b> {{name}} </b>({{years}}) -
+               {{relationship}}
+            </li>
+         </ul>
+      {{/each}}
+      <p>Most famous works:
+         {{#each known_for}}
+            <ul>
+               <li>{{this}}</li>
+            </ul>
+         {{/each}}
+      </p>
+   </div>
+   <br /><hr />
+
+   {{! дані про освіту }}
+   <div>
+      <h2>Education</h2>
+      {{#each education}}
+         <ul>
+            <li>
+               <strong> {{institution}} </strong>
+               -
+               {{year}}
+            </li>
+            <li>
+               Faculty:
+               {{field}}
+            </li>
+            <li>
+               <strong> Scince degree: {{degree}}</strong>
+            </li>
+         </ul>
+      {{/each}}
+   </div>
+   <br /><hr />
+
+   {{! роботи та награди }}
+   <div>
+      <h2>Works and awards</h2>
+      <div>
+         <h3>Publications:</h3>
+         {{#each notable_publications}}
+            <ul>
+               <li>
+                  <p>
+                     <strong>{{title}}</strong>,
+                     {{year}}
+                  </p>
+                  <p>published by {{publisher}} </p>
+               </li>
+            </ul>
+         {{/each}}
+      </div>
+
+      <div>
+         <h3>Awards</h3>
+         {{#each awards}}
+            <p><b><em> {{title}} </em></b> in {{year}}</p>
+            <p> {{description}} </p>
+         {{/each}}
+      </div>
+      <div>
+         <h3>Discoveries:</h3>
+         {{#each major_discoveries}}
+            <p>The most major work is
+               <strong>'{{title}}'</strong>
+               published in
+               {{year}}, where
+               {{description}}
+            </p>
+         {{/each}}
+      </div>
+
+   </div>
+   <br /><hr />
+
+   {{! додаткова інформація  }}
+   <div>
+      <h2>Additional information about {{name}}</h2>
+      <h3>Science:</h3>
+      <ul>
+         <li>
+            In his science work was influenced by{{#each
+               influences
+            }} {{this}}, {{/each}}
+         </li>
+         <li>
+            He has influenced to
+            {{#each influenced}} {{this}}, {{/each}}
+         </li>
+      </ul>
+      <hr />
+      <h3>Famous qoutes by {{name}}</h3>
+      <ul>
+         {{#each quotes}}
+            <li> {{this}} </li>
+         {{/each}}
+      </ul>
+      <hr />
+      {{#with contributions}}
+         <h3> {{title}} </h3>
+         <p> {{field}} in the {{year}}.</p>
+         <p> {{description}} </p>
+      {{/with}}
+   </div>
+
+</main>
