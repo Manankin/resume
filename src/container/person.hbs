@@ -1,0 +1,115 @@
+
+{{#with person}}
+   <main>
+
+{{!-- блок персональної інформаціїї --}}
+      <div class='person'>
+         <h1>{{name}}</h1>
+         <p>Age: {{age}} | sex: {{gender}}</p>
+         <address>
+            {{#with address}}
+               <P>{{street}},
+                  {{city}}
+               </p>
+               <p><strong>
+                  {{state}}, {{zip}}, {{country}}
+               </strong></P>
+            {{/with}}
+         </address>
+      </div>
+      <br><hr>
+
+{{!-- блок про освіту --}}
+      <div class="education">
+         <h2>Education:</h2>
+            {{#each education}}
+            <ul>
+               <li>
+                  <p><strong>{{university}}</strong> - {{graduationYear}}</p>
+               </li>     
+               <li>
+                  Faculty: {{major}} ({{degree}})
+               </li>
+            </ul>
+            {{/each}}
+      </div>
+      <br><hr>
+
+{{!-- блок про досвід роботи --}}
+      <div class="experience">
+         <h2>Experience</h2>
+         {{#each workExperience}}
+         <p>company: <strong>{{company}}</strong> ({{year_founded}}, {{industry}})</p>
+         <p>position: {{title}}</p>
+         <p>from {{startDate}} to {{endDate}}</p>
+         <p>Responsibilities:
+            {{#each responsibilities}}
+            <ul>
+               <li><em>{{this}}</em></li>
+            </ul>
+            {{/each}}
+         </p>
+         {{/each}}
+      </div>
+      <br><hr>
+{{!-- блок інформації про співробітників       --}}
+      <div>
+         {{#each workExperience}}
+         <h2>Our employees:</h2>
+         {{#each employees}}
+            <strong>{{name}}</strong> - {{position}} / {{department}}
+            {{#each projects}}
+            <p>Project name: <strong>{{name}}</strong> ({{description}}) ...{{status}}</p>
+            {{/each}}
+         {{/each}}
+         {{/each}}
+      </div>
+      <br><hr>
+
+{{!-- блок інформаціїї про проект --}}
+      <div>
+         {{#each workExperience}}
+         {{#each employees}}
+         {{#each projects}}
+            <h3> Current project: {{name}}</h3>
+            {{#each teams}}
+            <P>Project team: {{team_name}}</P>
+            {{#with team_leader}}
+               <p> <strong> {{title}}</strong> - {{> footerlink href=email text=name noLine=true}}</p>
+            {{/with}}
+            {{#each team_members}}
+               <p> <strong> {{title}}</strong> - {{> footerlink href=email text=name noLine=true}}
+               ( {{#each skills}}
+                  {{this}}
+               {{/each}} )
+               </p>
+               {{#each projects}}
+                  <ul>
+                     <li>
+                        <p>{{name}} - {{description}}</p>
+                        <p> {{#each technologies}} {{this}} {{/each}} </p>
+                        <p>Team members:</p>
+                        {{#each team_members}}
+                           <ul>
+                              <li>{{name}} - {{title}}</li>
+                           </ul>
+                        {{/each}}
+                     
+                     </li>
+                  </ul>                 
+               {{/each}}
+
+            {{/each}}
+         {{/each}}
+
+         {{/each}}
+         {{/each}}
+         {{/each}}
+      </div>
+   </main>
+{{/with}}
+
+
+
+
+
