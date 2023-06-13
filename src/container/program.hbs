@@ -1,0 +1,88 @@
+{{#with program}}
+<main>
+   {{! ввідний блок програми відпочинку }}
+   {{#with excursion}}
+   <div>
+      <h1> {{name}} for weekend</h1>
+         {{#with location}}
+         <p>We are going to visit <strong>{{city}}</strong> in <strong>{{country}}</strong></p>
+         <p> On {{../date}} we have full day program </p>
+         {{/with}}
+   </div>   
+   {{!-- опис програми --}}
+   <div>
+      <h2>Our program</h2>
+      {{#each program}}
+         <ul>
+            <li>
+               <p> <big>{{name}}</big> - duration {{duration}}h </p>
+               <p> type of relax - {{type}} </p>
+            </li>
+         </ul>
+      {{/each}}   
+   </div>
+   {{!-- блок з описом деталей --}}
+   <div>
+      <h3>More datails about program</h3>
+      {{#with program.[0]}}
+      <div>
+         <p><strong> {{name}} </strong> - {{duration}} hours</p>
+         {{#with details}}
+{{!-- try to create component location with var=venue/museum --}}         
+         {{#with museum}}
+            <p><strong>- {{name}} -</strong> {{location.address}},  {{location.city}}, {{location.country}}</p>
+            <p>Have to see:</p>
+            <ul>
+               {{#each exhibits}}  
+               <li>
+                  {{name}} - {{> artist data=artist}}
+                  <p>description: {{description}}</p>
+                  <p> {{#if audio_guide}} Audioguide is possible {{else}} no audioguide {{/if}}</p>
+               </li>
+               {{/each}}    
+            </ul>
+         {{/with}}
+         
+         {{#with guide}}
+            Info about your guide:
+            <ul>
+               <li>name: {{name}}</li>
+               <li>language: {{language}}</li>
+               <li>rating: {{rating}}</li>
+            </ul>
+         {{/with}}
+         {{/with}}
+      </div>
+      {{/with}}
+      <div>
+      </div>
+      {{#with program.[1]}}
+         <p><strong> {{name}} </strong> - {{duration}} hours</p>
+         {{!-- try to create component location with var=venue/museum --}}
+         {{#with details}}
+         
+         {{#with venue}}
+            <p><strong>- {{name}} -</strong> {{location.address}},  {{location.city}}, {{location.country}}</p>
+         {{/with}}
+            <p>Have to listen:</p>
+            <ul>
+               {{#each performers}}  
+               <li>
+                  {{name}} - {{type}}   
+               </li>
+               {{/each}}    
+            </ul>
+         {{#with guide}}
+            Info about your guide:
+            <ul>
+               <li>name: {{name}}</li>
+               <li>language: {{language}}</li>
+               <li>rating: {{rating}}</li>
+            </ul>
+         {{/with}}
+
+         {{/with}}
+      {{/with}}
+   {{/with}}
+   </main>
+{{/with}}
