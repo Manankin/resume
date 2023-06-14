@@ -15,87 +15,79 @@
       </div>
 
       <div>
-         {{#with languages.0}}
+         {{#each languages}}
             <div>
                <h2>About {{name}}</h2>
-               <ul>
-                  {{#each elements}}
-                     <li>
-                        <p><strong>{{name}}</strong>
-                           -
-                           {{description}}</p>
-                        <p>main attributes:</p>
-                        <ul>
-                           {{#each attributes}}
-                              <li>
-                                 <strong>{{name}}</strong>
-                                 -
-                                 {{description}}
-                              </li>
-                           {{/each}}
-                        </ul>
-                     </li>
-                  {{/each}}
-               </ul>
+               {{#if elements}}
+                  <ul>
+                     {{#each elements}}
+                        <li>
+                           <h3><strong>{{name}}</strong>
+                              -
+                              {{description}}</h3>
+                           <p>main attributes:</p>
+                           <ul>
+                              {{#each attributes}}
+                                 <li>
+                                    <strong
+                                    >{{name}}</strong>
+                                    -
+                                    {{description}}
+                                 </li>
+                              {{/each}}
+                           </ul>
+                        </li>
+                     {{/each}}
+                  </ul>
+               {{/if}}
+               {{#if properties}}
+                  <ul>
+                     {{#each properties}}
+                        <li>
+                           <h3><strong>{{name}}</strong>
+                              -
+                              {{description}}</h3>
+                           <p>main attributes:</p>
+                           <ul>
+                              {{#each values}}
+                                 <li>
+                                    <strong
+                                    >{{value}}</strong>
+                                    -
+                                    {{description}}
+                                 </li>
+                              {{/each}}
+                           </ul>
+                        </li>
+                     {{/each}}
+                  </ul>
+               {{/if}}
+               {{#if functions}}
+                  <ul>
+                     {{#each functions}}
+                        <li>
+                           <h3><strong>{{name}}</strong>
+                              -
+                              {{description}}</h3>
+                           <p>main attributes:</p>
+                           <ul>
+                              {{#each parameters}}
+                                 <li>
+                                    <strong
+                                    >{{name}}</strong>
+                                    - {{type}}
+                                    <p></p>{{description}}</p>
+                                 </li>
+                              {{/each}}
+                           </ul>
+                        </li>
+                     {{/each}}
+                  </ul>
+               {{/if}}
             </div>
-         {{/with}}
+         {{/each}}
       </div>
       <br /><hr />
-
-      <div>
-         {{#with languages.1}}
-            <div>
-               <h2>About {{name}}</h2>
-               <ul>
-                  {{#each properties}}
-                     <li>
-                        <p><strong>{{name}}</strong>
-                           -
-                           {{description}}</p>
-                        <p>main properties:</p>
-                        <ul>
-                           {{#each values}}
-                              <li>
-                                 <strong>{{value}}</strong>
-                                 -
-                                 {{description}}
-                              </li>
-                           {{/each}}
-                        </ul>
-                     </li>
-                  {{/each}}
-               </ul>
-            </div>
-         {{/with}}
-      </div>
-      <br /><hr />
-
-      <div>
-         {{#with languages.2}}
-            <div>
-               <h2>About {{name}}</h2>
-               <ul>
-                  {{#each functions}}
-                     <li>
-                        <p><strong>{{name}}</strong>
-                           -
-                           {{description}}</p>
-                        <p>main properties:</p>
-                        <ul>
-                           {{#each parameters}}
-                              <li>
-                                 <strong>{{value}}</strong>
-                                 -
-                                 {{description}}
-                              </li>
-                           {{/each}}
-                        </ul>
-                     </li>
-                  {{/each}}
-               </ul>
-            </div>
-         {{/with}}
-      </div>
 
    </main>
 {{/with}}
