@@ -1,0 +1,17 @@
+<ul>
+   {{#each mainFunction}}
+      <li>
+         <p><strong>{{name}}</strong> - {{description}}</p>
+         <p>main attributes:</p>
+         <ul>
+            {{#each marker}}
+               <li>
+                  <strong>{{name}}</strong>
+                  -
+                  {{description}}
+               </li>
+            {{/each}}
+         </ul>
+      </li>
+   {{/each}}
+</ul>
