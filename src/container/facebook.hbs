@@ -1,0 +1,108 @@
+<main>
+   <div>
+      <h1>{{name}}</h1>
+   </div>
+   <div>
+      <h2>Users info:</h2>
+      {{#each users}}
+         <div>
+            <h3>{{name}}</h3>
+            (id={{id}})
+            <p>Age: {{age}} -- {{gender}}</p>
+            <p><strong>Friends:</strong></p>
+            <ul>
+               {{#each friends}}
+                  <li>
+                     <p>{{name}} (id={{id}})</p>
+                     <p>Age: {{age}} -- {{gender}}</p>
+                     {{#if mutual_friends}}
+                        murtual friends:
+                        <ul>
+                           {{#each mutual_friends}}
+                              <li>
+                                 <p>{{name}} (id={{id}})</p>
+                                 <p>Age:
+                                    {{age}}
+                                    --
+                                    {{gender}}</p>
+                                 {{#if mutual_friends}}
+                                    second hand murtual
+                                    friends:
+                                    <ul>
+                                       {{#each
+                                          mutual_friends
+                                       }}
+                                          <li>
+                                             <p>{{name}}
+                                                (id={{id}})</p>
+                                             <p>Age:
+                                                {{age}}
+                                                --
+                                                {{gender}}</p>
+                                          </li>
+                                       {{/each}}
+                                    </ul>
+                                 {{/if}}
+                              </li>
+                           {{/each}}
+                        </ul>
+                     {{/if}}
+                     {{#if groups}}
+                        <p><strong>Groups:</strong></p>
+                        <ul>
+                           {{#each groups}}
+                              <li>
+                                 <p><em>{{name}}</em>
+                                    (id={{id}})</p>
+                                 <p>{{description}}</p>
+                                 {{#if members}}
+                                    <ul>
+                                       {{#each members}}
+                                          <li>
+                                             <p>{{name}}
+                                                (id={{id}})</p>
+                                             <p>Age:
+                                                {{age}}
+                                                --
+                                                {{gender}}</p>
+                                          </li>
+                                       {{/each}}
+                                    </ul>
+                                 {{/if}}
+                              </li>
+                           {{/each}}
+                        </ul>
+                     {{/if}}
+                  </li>
+               {{/each}}
+            </ul>
+            {{#if groups}}
+               <p><strong>Groups:</strong></p>
+               <ul>
+                  {{#each groups}}
+                     <li>
+                        <p><em>{{name}}</em> (id={{id}})</p>
+                        <p>{{description}}</p>
+                        {{#if members}}
+                           <ul>
+                              {{#each members}}
+                                 <li>
+                                    <p>{{name}}
+                                       (id={{id}})</p>
+                                    <p>Age:
+                                       {{age}}
+                                       --
+                                       {{gender}}</p>
+                                 </li>
+                              {{/each}}
+                           </ul>
+                        {{/if}}
+                     </li>
+                  {{/each}}
+               </ul>
+            {{/if}}
+         </div>
+      {{/each}}
+   </div>
+
+</main>
