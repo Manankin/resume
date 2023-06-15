@@ -1,0 +1,90 @@
+<main>
+   <div>
+      <h1>Hello from {{name}}</h1>
+      <p>{{description}}</p>
+      {{#with history}}
+         <p>It was founded in
+            <b>{{year}}</b>
+            by
+            <strong>{{founder}}</strong></p>
+      {{/with}}
+   </div>
+   <div>
+      <h2>Types of variables:</h2>
+      <ul>
+         {{#each types}}
+            <li>{{this}}</li>
+         {{/each}}
+      </ul>
+   </div>
+   <div>
+      <h2>Main syntax in {{name}}:</h2>
+      {{#with syntax}}
+         <dl>
+            <dt><strong>Variables:</strong></dt>
+            {{#each variables}}
+               <dd>- {{this}}</dd>
+            {{/each}}
+         </dl>
+         <dl>
+            <dt><strong>Functions:</strong></dt>
+            {{#each functions}}
+               <dd>- {{this}}</dd>
+            {{/each}}
+         </dl>
+         <dl>
+            <dt><strong>Conditionals:</strong></dt>
+            {{#each conditionals}}
+               <dd>- {{this}}</dd>
+            {{/each}}
+         </dl>
+         <dl>
+            <dt><strong>Loops:</strong></dt>
+            {{#each loops}}
+               <dd>- {{this}}</dd>
+            {{/each}}
+         </dl>
+         <dl>
+            <dt><strong>Classes:</strong></dt>
+            {{#each loops}}
+               <dd>- {{this}}</dd>
+            {{/each}}
+         </dl>
+      {{/with}}
+   </div>
+   <div>
+      <h2>Main features:</h2>
+      <ul>
+         {{#each features}}
+            <li>{{this}}</li>
+         {{/each}}
+      </ul>
+   </div>
+   <div>
+      <h2>Most popular libraries in {{name}}</h2>
+      {{#each libraries}}
+         |
+         {{this}}
+         |
+      {{/each}}
+   </div>
+   <div>
+      <h2>Different programms related to {{name}}</h2>
+      {{#each tools}}
+         |
+         {{this}}
+         |
+      {{/each}}
+   </div>
+   <div>
+      <h2>Where to read about {{name}}</h2>
+      <ul>
+         {{#each community}}
+            <li>
+               {{type}}:
+               <strong> {{name}} </strong>
+            </li>
+         {{/each}}
+      </ul>
+   </div>
+</main>
