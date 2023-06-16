@@ -7,10 +7,7 @@ body {
    background: lightgrey;
    border: 1px solid black;
 }
-div {
-   padding: 5px;
-   border: 1px dashed darkblue;
-}
+
 
 main,
 header,

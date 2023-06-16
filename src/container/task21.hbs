@@ -5,12 +5,12 @@
             <h1 class="h1">{{title}}</h1>
             <p class="paragraph">{{text}}</p>
             {{#with button_text}}
-               <button
+               <button type="button"
                   class="btn btn-primary"
                >{{solid}}</button>
                <br>
                <br>
-               <button
+               <button type="button"
                   class="btn btn-outline-primary"
                >{{outline}}</button>
             {{/with}}
@@ -22,12 +22,12 @@
             <h2 class="h2">{{title}}</h2>
             <p class="paragraph"> {{text}} </p>
             {{#with button_text}}
-               <button
+               <button type="button"
                   class="btn btn-secondary"
                >{{solid}}</button>
                <br>
                <br>
-               <button
+               <button type="button"
                   class="btn btn-outline-secondary"
                >{{outline}}</button>
             {{/with}}
@@ -39,12 +39,12 @@
             <h3 class="h3">{{title}}</h3>
             <p>{{text}}</p>
             {{#with button_text}}
-               <button
+               <button type="button"
                   class="btn btn-dark"
                >{{solid}}</button>
                <br>
                <br>
-               <button
+               <button type="button"
                   class="btn btn-outline-dark"
                >{{outline}}</button>
             {{/with}}
@@ -58,11 +58,11 @@
          {{#with children_display}}
             <h3 class="display-4">{{title}}</h3>
             <p>{{text}}</p>
-            <button class="btn btn-outline-warning">{{button.text}}</button>
+            <button type="button" class="btn btn-outline-warning">{{button.text}}</button>
          {{/with}}
          <br><br>
          <h6 class="h6">{{header_text}}</h6>
-         <button class="btn btn-info">{{button.text}}</button>
+         <button type="button" class="btn btn-info">{{button.text}}</button>
       </div>
    {{/with}}
    <br><hr>
@@ -71,14 +71,14 @@
          <p class="text-uppercase">{{title}}</p>
          <p class="text-lowercase">{{text}}</p>
          {{#with button}}
-         <a class="btn btn-link" href="{{url}}">{{text}}</button>
+         <a class="btn btn-link" href="{{url}}" role="button">{{text}}</button>
          {{/with}}
          <br>
          <div>
             <ul>
                {{#each list_name}}
                   <li>
-                     <a class="btn btn-link" href="{{url}}">{{text}}</button>
+                     <a role="button" class="btn btn-link" href="{{url}}">{{text}}</button>
                   </li>
                {{/each}}
             </ul>
