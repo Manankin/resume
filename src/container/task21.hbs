@@ -1,0 +1,89 @@
+<main>
+   {{#with heading}}
+      <div>
+         {{#with main}}
+            <h1 class="h1">{{title}}</h1>
+            <p class="paragraph">{{text}}</p>
+            {{#with button_text}}
+               <button
+                  class="btn btn-primary"
+               >{{solid}}</button>
+               <br>
+               <br>
+               <button
+                  class="btn btn-outline-primary"
+               >{{outline}}</button>
+            {{/with}}
+         {{/with}}
+      </div>
+      <br><hr>
+      <div>
+         {{#with second}}
+            <h2 class="h2">{{title}}</h2>
+            <p class="paragraph"> {{text}} </p>
+            {{#with button_text}}
+               <button
+                  class="btn btn-secondary"
+               >{{solid}}</button>
+               <br>
+               <br>
+               <button
+                  class="btn btn-outline-secondary"
+               >{{outline}}</button>
+            {{/with}}
+         {{/with}}
+      </div>
+      <br><hr>
+      <div>
+         {{#with subblock}}
+            <h3 class="h3">{{title}}</h3>
+            <p>{{text}}</p>
+            {{#with button_text}}
+               <button
+                  class="btn btn-dark"
+               >{{solid}}</button>
+               <br>
+               <br>
+               <button
+                  class="btn btn-outline-dark"
+               >{{outline}}</button>
+            {{/with}}
+         {{/with}}
+      </div>
+   {{/with}}
+<br><hr>
+   {{#with nested_display}}
+      <div>
+         <h2 class="display-1">{{title}}</h2>
+         {{#with children_display}}
+            <h3 class="display-4">{{title}}</h3>
+            <p>{{text}}</p>
+            <button class="btn btn-outline-warning">{{button.text}}</button>
+         {{/with}}
+         <br><br>
+         <h6 class="h6">{{header_text}}</h6>
+         <button class="btn btn-info">{{button.text}}</button>
+      </div>
+   {{/with}}
+   <br><hr>
+      {{#with paragraph}}
+      <div>
+         <p class="text-uppercase">{{title}}</p>
+         <p class="text-lowercase">{{text}}</p>
+         {{#with button}}
+         <a class="btn btn-link" href="{{url}}">{{text}}</button>
+         {{/with}}
+         <br>
+         <div>
+            <ul>
+               {{#each list_name}}
+                  <li>
+                     <a class="btn btn-link" href="{{url}}">{{text}}</button>
+                  </li>
+               {{/each}}
+            </ul>
+         </div>
+      </div>
+      
+   {{/with}}
+</main>
