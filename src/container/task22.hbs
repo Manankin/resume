@@ -1,0 +1,73 @@
+<main>
+{{#with page_header}}
+   <div >
+      <h1 class="h1 text-center">{{title}}</h1>
+      <p class="text-uppercase text-center">{{description}}</p>
+   </div>
+{{/with}}
+<br><hr>
+{{#with section}}
+   <div>
+   {{#with about_us}}
+      <div class="card card-body">
+      {{#with title_list}}
+         <p class="display-6 text-end">{{main}}</p>
+         <h2 class="h2 text-end">{{sub}}</h2>
+         <button type="button" class="btn btn-sm btn-outline-info test-start">{{../button.text}}</button>
+      {{/with}}
+      </div>
+   {{/with}}
+
+   {{#with advantage}}
+      <div class="card card-body">
+         <p class="display-5">{{title}}</p>
+         {{#with efficiency}}
+         <div class="card card-body">
+            <p class="display-4">{{title}}</p>
+            <h6 class="h6">{{sub_title}}</h6>
+            <p>{{description}}</p>
+            <button type="button" class="btn btn-outline-warning">{{button}}</button>
+         </div>
+         {{/with}}
+         {{#with innovation}}
+         <div class="card card-body">
+            <p class="display-4 text-center">{{title}}</p>
+            <h6 class="h6 text-center">{{sub_title}}</h6>
+            <p class="text-center paragraph">{{description}}</p>
+            <button type="button" class="btn btn-outline-warning">{{button}}</button>
+         </div>
+         {{/with}}
+         {{#with collaboration}}
+         <div class="card card-body">
+            <p class="display-4 text-end">{{title}}</p>
+            <h6 class="h6 text-end">{{sub_title}}</h6>
+            <p class="text-end paragraph">{{description}}</p>
+            <button type="button" class="btn btn-outline-warning">{{button}}</button>
+         </div>
+         {{/with}}
+      </div>
+   {{/with}}
+
+   {{#with agreement}}
+      <div class="card card-body">
+         <p class="display-5">{{title}}</p>
+         <br>
+         {{#with info}}
+         <div class="card card-body">
+            <h5 class="h5">{{sub_title}}</h5>
+            <br>
+            <div class="card card-body">
+               {{#with detail}}
+               <div>
+                  <p class="paragraph">{{text}}</p>
+                  <button type="button" class="btn btn-success">{{button}}</button>
+               </div>
+               {{/with}}
+            </div>
+         </div>
+         {{/with}}
+      </div>
+   {{/with}}
+   </div>
+{{/with}}
+</main>
