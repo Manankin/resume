@@ -1,3 +1,74 @@
-<main>
-   <h1>Hi. It's Bootstrap</h1>
+<main class="">
+   Form INPUT
+   <div class="row g-2 m-2">
+      <div class="col-6">
+         <div>
+            <label for="email" class="form-label">email address</label>
+            <input type="text" name="email" class="form-control" placeholder="type your email address here  ">
+            <div class="form-text text-danger">You must enter correct email</div>
+         </div>
+      </div>
+      <div class="col-6">
+         <div>
+            <label for="email" class="form-label">your fav color:</label>
+            <input type="color" name="color" class="form-control" placeholder="choose favorite color">
+            <div class="form-text text-danger">Show me what you like</div>
+         </div>
+      </div>
+   </div>
+   <hr>
+   Form SELECT
+   <div class="row g-2 m-2">
+      <div class="col-4">
+         <div class="">
+            <label for="role" class="form-label">Your role is:</label>
+            <select name="role" class="form-select">
+               <option selected>open list</option>
+               <option value="Admin">Admin</option>
+               <option value="User">User</option>
+               <option value="Superviser">Superviser</option>
+            </select>
+            <div class="form-text text-danger">Show me who are you</div>
+         </div>
+      </div>
+
+      <div class="col-4">
+         <div class="form-check">
+            <label for="food">Apple</label>
+            <input type="checkbox" class="form-check-input" name="food">            
+         </div>
+         <div class="form-check">
+            <label for="food">Orange</label>
+            <input type="checkbox" class="form-check-input" name="food">            
+         </div>
+         <div class="form-check">
+            <label for="food">Banana</label>
+            <input type="checkbox" class="form-check-input" name="food">            
+         </div>
+      </div>
+
+      <div class="col-4">
+         <div class="form-check">
+            <label for="food">Apple</label>
+            <input type="radio" class="form-check-input" name="food">            
+         </div>
+         <div class="form-check">
+            <label for="food">Orange</label>
+            <input type="radio" class="form-check-input" name="food">            
+         </div>
+         <div class="form-check">
+            <label for="food">Banana</label>
+            <input type="radio" class="form-check-input" name="food">            
+         </div>
+      </div>
+      </div>
+      <div class="row">
+         <div class="col-6">
+            <div class="form-check form-switch">
+               <label for="bonus" class="form-check-label">Do you have promocode?</label>
+               <input type="checkbox" name="bonus" class="form-check-input">
+            </div>
+         </div>
+      </div>
+   </div>
 </main>
