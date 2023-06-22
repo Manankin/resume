@@ -1,0 +1,42 @@
+<main>
+   {{!-- header nav --}}
+   <div class="card mb-3">
+   {{#with navigation}}
+      <div class="nav">
+      {{#each links}}
+         {{#if href}}
+         <div class="nav-item">
+            <a href="href" class="nav-link">{{text}}</a>
+         </div>
+         {{else}}
+         <div class="nav-item">
+            <a href="href" class="nav-link disabled">Disabled</a>
+         </div>
+         {{/if}}
+      {{/each}}             
+      </div>
+   {{/with}}
+   </div>
+   <hr>
+   {{!--part 1--}}
+
+   {{!--end of part 1--}}
+   
+
+
+   {{!-- footer nav --}}
+   <hr class="my-2">
+   <div class="row my-3">
+      {{#each footer}}   
+         <div class="col-2">
+            <div class="nav flex-column">
+               <a href="{{0.link}}" class="nav-item nav-link">{{0.text}}</a>
+               <a href="{{1.link}}" class="nav-item nav-link">{{1.text}}</a>
+               <a href="{{2.link}}" class="nav-item nav-link">{{2.text}}</a>
+               <a href="{{3.link}}" class="nav-item nav-link disabled">{{3.text}}</a>
+            </div>
+         </div>
+      {{/each}}
+   </div>
+   <hr>
+</main>
