@@ -1,5 +1,7 @@
 html {
    max-width: 100%;
+   margin: 10px;
+   padding: 5px;
 }
 
 body {
@@ -13,9 +15,16 @@ main,
 header,
 footer,
 nav {
-   margin: 16px;
+   margin: 10px;
+}
+.header-block div, address {
+   text-align: right;
 }
 
-section {
-   padding: 16px;
+.footer-block .address {
+   text-align: right;
+}
+.footer-block .nav {
+   display: flex;
+   justify-content: center;
 }
