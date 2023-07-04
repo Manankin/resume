@@ -10,15 +10,18 @@ body {
    border: 1px solid black;
 }
 
-
 main,
 header,
 footer,
 nav {
    margin: 10px;
 }
-.header-block div, address {
+.header-block div,
+address {
    text-align: right;
+}
+.header-block .h2 {
+   color: lightseagreen;
 }
 
 .footer-block .address {
@@ -27,4 +30,16 @@ nav {
 .footer-block .nav {
    display: flex;
    justify-content: center;
+}
+
+a {
+   text-decoration: none;
+}
+
+.card {
+   background: lightgrey;
+}
+
+.btn .h4 {
+   color: rgb(37, 0, 124);
 }

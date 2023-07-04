@@ -2,8 +2,70 @@
 Це код container файлу для index сторінки, 
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
  }}
+<main>
+   {{!-- <header class='row mb-3'>
+      <div class='col-6'>
+         {{#with header}}
+            <h1 class='h2'>{{name.firstname}}
+               {{name.lastname}}
+            </h1>
+         {{/with}}
+      </div>
+      <div class='col-6 header-block h2'>
+         <div>
+            <a href='./summary.hbs' class='h2'>Resume
+               project</a>
+         </div>
+      </div>
+   </header> --}}
+   <section class='card mt-3'>
+      <div class='card-body'>
+         <h2 class='h3'>Project additional info</h2>
+         <p class='h4 my-3'>I've learnt to work with
+            <strong>Handlebar and Bootstrap</strong>
+            at this project. I've made resume page with own
+            data and also had practice on some other pages
+            which look like parts of internet-shop. You can
+            find links to them above.</p>
+         <div class=''>
+            <ul class='group-list'>
+               <li class='group-list-item mb-2'>
+                  <a
+                     href='/shophome'
+                     class='btn btn-outline-secondary'
+                  > Shop home</a>
+               </li>
+               <li class='group-list-item mb-2'>
+                  <a
+                     href='./shopcatalog.hbs'
+                     class='btn btn-outline-secondary'
+                  > Shop catalog</a>
+               </li>
+               <li class='group-list-item mb-2'>
+                  <a
+                     href='./shopcart.hbs'
+                     class='btn btn-outline-secondary'
+                  > Shop card</a>
+               </li>
+               <li class='group-list-item mb-2'>
+                  <a
+                     href='./shoporder.hbs'
+                     class='btn btn-outline-secondary'
+                  > Shop order</a>
+               </li>
+               <li class='group-list-item mb-2'>
+                  <a
+                     href='./shopreview.hbs'
+                     class='btn btn-outline-secondary'
+                  > Shop review</a>
+               </li>
+            </ul>
+         </div>
+      </div>
 
+   </section>
 
+</main>
 
 {{! 
     Цей код містить лише те, що буде виводитись в <body>

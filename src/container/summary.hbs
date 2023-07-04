@@ -3,32 +3,32 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 }}
 
-<div>
-   
+<div>   
    {{#with main}}
    <main>
       {{#with summary}}
-      <section>
-         {{> title data=title big=true}}
-         
-         <div>
+      <section class="card mb-3">
+         <div class="card-header">
+            {{> title data=title big=true}}         
+         </div>         
+         <div class="card-body">
             <p>{{text}}</p>
          </div>
       </section>
       {{/with}}
 
       {{#with experience}}
-      <section>
-         {{> title data="Expierence" big=false}}
-         <div>
+      <section class="card mb-3">
+         <div class="card-header">
+            {{> title data="Expierence" big=false}}
+         </div>         
+         <div class="card-body">
             <p>{{text}}</p>
          </div>
       </section>
       {{/with}} 
-
    </main>
    {{/with}}
-
 </div>
 
 {{!-- 
