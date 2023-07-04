@@ -1,43 +1,48 @@
 {{! Цей контейнер сторінки skills, де буде показано нашы навички та знання }}
 
-<div>
-   {{#with main}} 
-   <main>
-        <section>
-            {{> title data=title big=true }}
-            <ul>
-                {{#each skills}}
-                <li>
-                  {{name}}
-                  {{#if points includeZero=true}} - {{points}} {{/if}}
-                  {{#if isTop}} - it's my Top technology{{/if}}
-                  
-                  {{#unless points}} 
-                     {{#if points includeZero=true}} - in learning process
-                     {{else}}  - don't learning {{/if}}
-                  {{/unless}}
-                  
-                </li>
-                {{/each}}
-            </ul>
-        </section>
 
-        <section>
-          {{> title data=hobby big=false }}
-          <ol>
-            {{#each hobbies}}
-            <li>
-              {{name}}
-              {{#if isMain}} (favourite) {{/if}}
-            </li>
-            {{/each}}
-          </ol>
-        </section>
+{{#with main}} 
+<main>
+  <section class="card mb-3">
+    <div class="card-header">
+      {{> title data=title big=true }}
+    </div>
+    <div class="card-body">          
+      <ul class="list-group">
+          {{#each skills}}
+          <li class="list-group-item">
+            {{name}}
+            {{#if points includeZero=true}} - {{points}} {{/if}}
+            {{#if isTop}} - it's my Top technology{{/if}}
+            
+            {{#unless points}} 
+                {{#if points includeZero=true}} - in learning process
+                {{else}}  - don't learning {{/if}}
+            {{/unless}}
+          </li>
+          {{/each}}
+      </ul>
+    </div>
+  </section>
 
-      Skills in technologies ...
-   </main>
-   {{/with}}
-</div>
+  <section class="card mb-3">
+    <div class="card-header">
+      {{> title data=hobby big=false }}
+    </div>
+    <div class="card-body">
+      <ol class="list-group">
+        {{#each hobbies}}
+        <li class="list-group-item">
+          {{name}}
+          {{#if isMain}} (favourite) {{/if}}
+        </li>
+        {{/each}}
+      </ol>      
+    </div>
+  </section>
+</main>
+{{/with}}
+
 
 {{!-- 
     Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs

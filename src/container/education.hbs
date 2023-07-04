@@ -1,26 +1,35 @@
 {{#with main}}
-<main>
-    {{>title data=title big=true}}
-    <section>
-        <ul>
+<main>    
+    <section class="card mb-3">
+        <div class="card-header">
+            {{>title data=title big=true}}
+        </div>
+        <div class="card-body">
+            <ul class="list-group">
             {{#each educations}}
-            <li>
+            <li class="list-group-item">
                 {{name}}
                 {{#unless isEnd}} - studying in process {{/unless}}
             </li>
             {{/each}}
         </ul>
+        </div>
     </section>
 
-    {{>title data=certificate big=false}}
-    <section>
-        <ul>
-            {{#each certificates}}
-                <li>
+    
+    <section class="card mb-3">
+        <div class="card-header">
+            {{>title data=certificate big=false}}
+        </div>
+        <div class="card-body">
+            <ul class="list-group">
+                {{#each certificates}}
+                <li class="list-group-item">
                     {{name}} ({{id}})
                 </li>
-            {{/each}}
-        </ul>
+                {{/each}}
+            </ul>
+        </div>
     </section>
 </main>
 {{/with}}
