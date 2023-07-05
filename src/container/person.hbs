@@ -3,11 +3,14 @@
    <main>
 
 {{!-- блок персональної інформаціїї --}}
-      <div class='person'>
-         <h1>{{name}}</h1>
-         <p>Age: {{age}} | sex: {{gender}}</p>
-         <address>
-            {{#with address}}
+      <div class='person row mb-2'>
+         <div class="col-6">
+            <h1>{{name}}</h1>
+            <p>Age: {{age}} | sex: {{gender}}</p>
+         </div>
+         <div class="col-6 address">
+            <address class="">
+            {{#with address}}               
                <P>{{street}},
                   {{city}}
                </p>
@@ -15,12 +18,13 @@
                   {{state}}, {{zip}}, {{country}}
                </strong></P>
             {{/with}}
-         </address>
+            </address>
+         </div>
       </div>
-      <br><hr>
+      <hr>
 
 {{!-- блок про освіту --}}
-      <div class="education">
+      <div class="education mb-2">
          <h2>Education:</h2>
             {{#each education}}
             <ul>
@@ -33,10 +37,10 @@
             </ul>
             {{/each}}
       </div>
-      <br><hr>
+      <hr>
 
 {{!-- блок про досвід роботи --}}
-      <div class="experience">
+      <div class="experience mb-2">
          <h2>Experience</h2>
          {{#each workExperience}}
          <p>company: <strong>{{company}}</strong> ({{year_founded}}, {{industry}})</p>
@@ -51,9 +55,9 @@
          </p>
          {{/each}}
       </div>
-      <br><hr>
+      <hr>
 {{!-- блок інформації про співробітників       --}}
-      <div>
+      <div class="mb-2">
          {{#each workExperience}}
          <h2>Our employees:</h2>
          {{#each employees}}
@@ -64,7 +68,7 @@
          {{/each}}
          {{/each}}
       </div>
-      <br><hr>
+      <hr>
 
 {{!-- блок інформаціїї про проект --}}
       <div>
